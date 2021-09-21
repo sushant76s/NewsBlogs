@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% block title %} | Blogs{% endblock title %}
+{% block content %}
+{% load static %}
+
+<section>
+<div class="row">
+  {% for i in blog_obj %}
+    <div class="card" style="width: 18rem;">
+      <img src="{{i.blog_image.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="">{{i.blog_title}}</h5>
+        <p class="card-text">{{i.blog_info}}</p>
+        <h1>{{i.blog_date}}</h1>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+</section>
+
+{% endblock %}
+
+
+{% comment %} pagination {% endcomment %}
+<section>
+<div class="mt-4">
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+
+    {% if blog_obj.has_previous %}
+      <li class="page-item active">
+        <a class="page-link" href="?page={{ blog_obj.previous_page_number }}">Previous</a>
+      </li>
+    {% endif %}
+
+    <li class="page-item"><a class="page-link"><span>{{ blog_obj.number }}</span></a></li>
+
+    {% if blog_obj.has_next %}
+      <li class="page-item active">
+        <a class="page-link" href="?page={{ blog_obj.next_page_number }}">Next</a>
+      </li>
+    {% endif %}
+
+  </ul>
+</nav>
+</div>
+
+</section>
