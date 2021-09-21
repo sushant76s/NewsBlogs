@@ -16,7 +16,7 @@ def index(request):
 
 
 def blogs(request):
-    blogPost = Blogs.objects.all()
+    blogPost = Blog.objects.all()
     paginator = Paginator(blogPost, 5)
     blog_num = request.GET.get('page')
     blog_obj = paginator.get_page(blog_num)
