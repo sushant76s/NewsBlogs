@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from .models import Blogs
+from .models import Blog
 from django.conf import settings
 from django.core.paginator import Paginator
 
