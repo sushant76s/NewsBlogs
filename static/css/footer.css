@@ -8,9 +8,9 @@
 }
 footer{
   width: 100%;
-  position: fixed;
+  position: sticky;
+  margin-top: 50%;
   bottom: 0;
-  left: 0;
   background: rgb(221, 15, 15);
 }
 footer .content{
